@@ -5,7 +5,6 @@
  * each path.
  */
 import React from 'react';
-import { createRoot } from 'react-dom/client';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 
@@ -22,32 +21,27 @@ import EditPostPage from './pages/EditPostPage';
 import ViewPostPage from './pages/ViewPostPage';
 import CreateMessagePage from './pages/CreateMessagePage';
 import ViewMessagePage from './pages/ViewMessagePage';
+import NotFoundPage from './pages/NotFoundPage';
 
-function App() {
+export default function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" exact component={HomePage} />
-        <Route path="/explore" component={ExplorePage} />
-        <Route path="/notifications" component={NotificationPage} />
-        <Route path="/search" component={SearchPage} />
-        <Route path="/profile/:userId" component={ProfilePage} />
-        <Route path="/settings" component={SettingsPage} />
-        <Route path="/friends" component={FriendsPage} />
-        <Route path="/groups" component={GroupsPage} />
-        <Route path="/create-post" component={CreatePostPage} />
-        <Route path="/edit-post/:postId" component={EditPostPage} />
-        <Route path="/view-post/:postId" component={ViewPostPage} />
-        <Route path="/create-message" component={CreateMessagePage} />
-        <Route path="/view-message/:messageId" component={ViewMessagePage} />
+        <Route path="/" exact element={<HomePage/>}/>
+        <Route path="/explore" element={<ExplorePage/>} />
+        <Route path="/notifications" element={<NotificationPage/>} />
+        <Route path="/search" element={<SearchPage/>} />
+        <Route path="/profile/:userId" element={<ProfilePage/>} />
+        <Route path="/settings" element={<SettingsPage/>} />
+        <Route path="/friends" element={<FriendsPage/>} />
+        <Route path="/groups" element={<GroupsPage/>} />
+        <Route path="/create-post" element={<CreatePostPage/>} />
+        <Route path="/edit-post/:postId" element={<EditPostPage/>} />
+        <Route path="/view-post/:postId" element={<ViewPostPage/>} />
+        <Route path="/create-message" element={<CreateMessagePage/>} />
+        <Route path="/view-message/:messageId" element={<ViewMessagePage/>} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Router>
   );
 }
-
-
-const container = document.getElementById('root');
-const root = createRoot(container);
-root.render(<HomePage />);
-
-export default App;
