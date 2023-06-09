@@ -4,6 +4,11 @@ import '../../assets/styles/Navbar.css';
 
 import Logo from '../../assets/images/Logo.jpg';
 
+<<<<<<< HEAD
+=======
+// import './Navbar.scss';
+
+>>>>>>> d028a246aae124ca436b0f627eb9b434cd0a02c8
 const Navbar = () => {
     return (
       <nav className="navbar">
