@@ -1,0 +1,98 @@
+.comment {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  max-width: 500px; /* added to set a max width for the comment box */
+  height: auto; /* removed to allow the box height to adjust based on content */
+}
+
+.comment__avatar {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.comment__text {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  white-space: pre-wrap;
+}
+
+.comment-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.comment-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.comment-author {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.comment-date {
+  font-size: 12px;
+  color: #6c757d;
+}
+
+.comment-content {
+  margin: 10px 0;
+}
+
+.comment-actions {
+  display: flex;
+  align-items: center;
+}
+
+.comment-actions button {
+  background-color: rgb(123, 123, 243);
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  margin-right: 10px;
+  outline: none;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.comment-replies {
+  margin-left: 40px;
+}
+
+.comment-reply {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.comment-reply .comment-avatar {
+  margin-right: 10px;
+}
+
+.comment-reply .comment-author {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.comment-reply .comment-date {
+  font-size: 12px;
+  color: #6c757d;
+} 
+
+.comment-reply .comment-content {
+  margin: 0;
+}
