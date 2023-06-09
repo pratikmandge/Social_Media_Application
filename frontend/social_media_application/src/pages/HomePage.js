@@ -1,10 +1,12 @@
 import React from 'react';
 
-export default function HomePage() {
+// import Navbar from '../components/common/Navbar';
+import PostList from '../components/post/PostList';
+
+const HomePage = () => {
   return (
-    <div>
-      <h1>Home Page</h1>
-      <p>This is the Home page.</p>
-    </div>
+      <PostList />
   );
-}
+};
+
+export default HomePage;

@@ -22,26 +22,30 @@ import ViewPostPage from './pages/ViewPostPage';
 import CreateMessagePage from './pages/CreateMessagePage';
 import ViewMessagePage from './pages/ViewMessagePage';
 import NotFoundPage from './pages/NotFoundPage';
+import Navbar from './components/common/Navbar';
 
 export default function App() {
   return (
     <Router>
-      <Routes>
-        <Route path="/" exact element={<HomePage/>}/>
-        <Route path="/explore" element={<ExplorePage/>} />
-        <Route path="/notifications" element={<NotificationPage/>} />
-        <Route path="/search" element={<SearchPage/>} />
-        <Route path="/profile/:userId" element={<ProfilePage/>} />
-        <Route path="/settings" element={<SettingsPage/>} />
-        <Route path="/friends" element={<FriendsPage/>} />
-        <Route path="/groups" element={<GroupsPage/>} />
-        <Route path="/create-post" element={<CreatePostPage/>} />
-        <Route path="/edit-post/:postId" element={<EditPostPage/>} />
-        <Route path="/view-post/:postId" element={<ViewPostPage/>} />
-        <Route path="/create-message" element={<CreateMessagePage/>} />
-        <Route path="/view-message/:messageId" element={<ViewMessagePage/>} />
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
+      <div className="App" style={{ paddingTop: '60px' }}>
+        <Navbar />
+          <Routes>
+            <Route path="/" exact element={<HomePage/>}/>
+            <Route path="/explore" element={<ExplorePage/>} />
+            <Route path="/notifications" element={<NotificationPage/>} />
+            <Route path="/search" element={<SearchPage/>} />
+            <Route path="/profile/:userId" element={<ProfilePage/>} />
+            <Route path="/settings" element={<SettingsPage/>} />
+            <Route path="/friends" element={<FriendsPage/>} />
+            <Route path="/groups" element={<GroupsPage/>} />
+            <Route path="/create-post" element={<CreatePostPage/>} />
+            <Route path="/edit-post/:postId" element={<EditPostPage/>} />
+            <Route path="/view-post/:postId" element={<ViewPostPage/>} />
+            <Route path="/create-message" element={<CreateMessagePage/>} />
+            <Route path="/view-message/:messageId" element={<ViewMessagePage/>} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+      </div>
     </Router>
   );
 }
