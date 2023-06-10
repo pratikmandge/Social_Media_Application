@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import NavBar from './Components/Navbar/NavBar'
+import NavBar from './components/NavBar/NavBar'
 import MainPage from './Settings/SideBar/MainPage';
-import MainFeeds from './Components/Feeds/MainFeeds';
+import MainFeeds from './components/Feeds/MainFeeds';
 import "./App.css";
 // import "./Scroll.css";
 

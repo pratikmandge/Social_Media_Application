@@ -4,7 +4,7 @@ import SideBar from "./SideBar";
 import EditProfilePage from "../Content/pages/EditProfilePage";
 import PasswordChangePage from "../Content/pages/PasswordChangePage";
 import SavePostPage from "../Content/pages/SavePostPage";
-import NavBar from "../../Components/Navbar/NavBar";
+// import NavBar from "../../components/NavBar/NavBar";
 
 const MainPage = () => {
   const [showSide, setshowSide] = useState(false);

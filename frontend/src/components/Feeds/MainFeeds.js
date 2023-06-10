@@ -2,7 +2,7 @@ import React ,{useState} from 'react'
 import Post from "./Post";
 import Story from "./Story";
 import TopNavBar from "./TopNavBar";
-import NavBar from "../Navbar/NavBar";
+// import NavBar from "../NavBar/NavBar";
 import StoryTop from "./StoryTop";
 import FriendRequest from './FriendRequest';
 import CreatePost from '../Posts/CreatePost';
