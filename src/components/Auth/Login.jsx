@@ -17,7 +17,7 @@ const Login = () => {
   }
 
   const onSubmit = ()=>{
-    if(email === "firoz" && password === "123"){
+    if(email === "bhavana" && password === "123"){
       console.log("Logged in Successfullly");
       const token = email+" "+password;
       localStorage.setItem("user",token);
