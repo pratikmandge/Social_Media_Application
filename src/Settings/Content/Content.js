@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Content = ({pageToShow}) => {
+const Content = ({pageToShow}) => { //<passwordChangePage/>
   return (
     <div>
         {pageToShow}
