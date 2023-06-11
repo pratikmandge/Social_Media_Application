@@ -1,0 +1,18 @@
+1.) Edit profile   -> https://kiranworkspace.com/downloads/profile-account-settings-page-ui-design-html-css-bootstrap/
+2.) Saved Post 
+3.) password  
+        -> Current password
+        -> New password
+        -> Confirm password
+
+
+
+report and blcoking
+
+
+
+Reference template -> http://preview.themeforest.net/item/sociala-social-network-app-html-template/full_screen_preview/31502548
+
+
+
+Demo -> http://uitheme.net/sociala/default.html
