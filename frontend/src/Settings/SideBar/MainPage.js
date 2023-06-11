@@ -4,17 +4,21 @@ import SideBar from "./SideBar";
 import EditProfilePage from "../Content/pages/EditProfilePage";
 import PasswordChangePage from "../Content/pages/PasswordChangePage";
 import SavePostPage from "../Content/pages/SavePostPage";
-import NavBar from "../../Components/Navbar/NavBar";
+import NavBar from "../../components/NavBar/NavBar";
+import ProfilePage from "../../components/Profile/ProfilePage";
 
 const MainPage = () => {
   const [showSide, setshowSide] = useState(false);
 
-  const [selectedPage, setSelectedPage] = useState("editProfile");
-
+  const [selectedPage, setSelectedPage] = useState("editProfile"); // stores current page key
+  
+  //Stores key value (Component) key = "editprofile"
+  // page[key] => <EditProfilePage/>
   const pages = {
     editProfile: <EditProfilePage />,
     password: <PasswordChangePage />,
     savedPost: <SavePostPage />,
+    profilePage: <ProfilePage />,
   };
 
   return (
@@ -57,8 +61,11 @@ const MainPage = () => {
 
         <div
           onClick={() => setshowSide(false)}
-          class="p-4 sm:ml-64 h-screen w-full"
+          class="p-4 sm:ml-64 h-full w-full bg-gray-50"
         >
+
+          {/* // selectedPage = "editProfile" */}
+          {/* // pagesToShow = pages[key] -> "<PasswordChangePage />" */}
           <Content pageToShow={pages[selectedPage]} />
         </div>
 
