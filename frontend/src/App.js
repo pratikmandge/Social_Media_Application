@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import NavBar from './Components/NavBar/NavBar';
+import NavBar from './components/NavBar/NavBar';
 import MainPage from './Settings/SideBar/MainPage';
-import MainFeeds from './Components/Feeds/MainFeeds';
+import MainFeeds from './components/Feeds/MainFeeds';
 
 import "./App.css";
 // import "./Scroll.css";
@@ -49,21 +49,14 @@ const router = createBrowserRouter([
 
 const App = () => {
   const [showNav, setShowNav] = useState(false);
-
   return (
     <div id='root'>
-      
         <NavBar showNav={showNav} setShowNav={setShowNav}/>
-
       <div onClick = {() => setShowNav(!showNav)}>
         <RouterProvider router={router} />
         </div>
-        {/* <MainPage /> */}
-        
+        {/* <MainPage /> */}  
     </div>
-    
   )
-  
 }
-
 export default App
