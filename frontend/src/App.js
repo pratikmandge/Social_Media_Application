@@ -11,8 +11,9 @@ import {
   RouterProvider,
   
 } from "react-router-dom";
-import Login from './components/Auth/Login';
-// import ChatBody from './components/Message/chatBody/chatBody/ChatBody';
+import Login from './Components/Auth/Login';
+import ChatBody from './Components/Message/chatBody/ChatBody';
+import Register from './Components/Auth/Register';
 
 
 
@@ -30,10 +31,14 @@ const router = createBrowserRouter([
     path: "/login",
     element: <Login />,
   },
-  // {
-  //   path:"/message",
-  //   // element:<ChatBody/>
-  // }
+  {
+    path: "/register",
+    element: <Register />,
+  },
+  {
+    path:"/message",
+    element:<ChatBody/>
+  }
   
   // {
   //   path: "/Profile",

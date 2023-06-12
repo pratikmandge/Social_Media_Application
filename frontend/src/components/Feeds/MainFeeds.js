@@ -20,11 +20,11 @@ const MainFeeds = () => {
   //  useEffect -> intialized at the starting stage of a component life cycle
 
 
-  useEffect(() => {
-    if(localStorage.getItem("user") === null){
-      navigate("/login");
-    }
-  },[]);
+  // useEffect(() => {
+  //   if(localStorage.getItem("user") === null){
+  //     navigate("/login");
+  //   }
+  // },[]);
 
 
     const [postData, setPostData] = useState([
@@ -67,11 +67,11 @@ const MainFeeds = () => {
             <StoryTop/>
             <div className='mt-4 flex justify-end '>
               <div className=" sm:w-full w-full">
-                  <CreatePost/>
+                  <CreatePost postData={postData} setPostData={setPostData}/>
                   <Suggestions/>
                   {
                     postData ? 
-                      postData.map((post,index)=>{ // loop through each element -> post
+                      postData.slice(0).reverse().map((post,index)=>{ // loop through each element -> post
                         return(
                           <Posts post={post} />
                         )
@@ -90,6 +90,8 @@ const MainFeeds = () => {
 
           </div>
         </div> 
+
+
         
     </div>
   )
