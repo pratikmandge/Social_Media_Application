@@ -4,8 +4,8 @@ import SideBar from "./SideBar";
 import EditProfilePage from "../Content/pages/EditProfilePage";
 import PasswordChangePage from "../Content/pages/PasswordChangePage";
 import SavePostPage from "../Content/pages/SavePostPage";
-import NavBar from "../../Components/NavBar/NavBar";
-import ProfilePage from "../../Components/Profile/ProfilePage";
+import profilePage from "../../components/Profile/ProfilePage";
+
 
 const MainPage = () => {
   const [showSide, setshowSide] = useState(false);
@@ -18,7 +18,7 @@ const MainPage = () => {
     editProfile: <EditProfilePage />,
     password: <PasswordChangePage />,
     savedPost: <SavePostPage />,
-    profilePage: <ProfilePage />,
+    profilePage: <profilePage />,
   };
 
   return (

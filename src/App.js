@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
-import NavBar from './Components/NavBar/NavBar';
+import MainFeeds from './components/Feeds/MainFeeds';
 import MainPage from './Settings/SideBar/MainPage';
-import MainFeeds from './Components/Feeds/MainFeeds';
+import Login from './components/Auth/Login';
+//import ChatBody from './Components/Message/chatBody/chatBody/ChatBody';
+import NavBar from './components/NavBar/NavBar';
+// import ProfilePage from './Components/Profile/ProfilePage';
 
 import "./App.css";
 // import "./Scroll.css";
@@ -11,8 +14,7 @@ import {
   RouterProvider,
   
 } from "react-router-dom";
-import Login from './Components/Auth/Login';
-import ChatBody from './Components/Message/chatBody/chatBody/ChatBody';
+
 
 
 
@@ -30,14 +32,14 @@ const router = createBrowserRouter([
     path: "/login",
     element: <Login />,
   },
-  {
-    path:"/message",
-    element:<ChatBody/>
-  }
+  // {
+  //   path:"/message",
+  //   element:<ChatBody/>
+  // }
   
   // {
   //   path: "/Profile",
-  //   element: <Profilepage />,
+  //   element: <ProfilePage />,
 
   // },
 ]);
