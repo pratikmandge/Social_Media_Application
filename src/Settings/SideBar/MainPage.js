@@ -4,7 +4,7 @@ import SideBar from "./SideBar";
 import EditProfilePage from "../Content/pages/EditProfilePage";
 import PasswordChangePage from "../Content/pages/PasswordChangePage";
 import SavePostPage from "../Content/pages/SavePostPage";
-import profilePage from "../../components/Profile/ProfilePage";
+import ProfilePage from "../../components/Profile/ProfilePage";
 
 
 const MainPage = () => {
@@ -18,7 +18,7 @@ const MainPage = () => {
     editProfile: <EditProfilePage />,
     password: <PasswordChangePage />,
     savedPost: <SavePostPage />,
-    profilePage: <profilePage />,
+    profilePage: <ProfilePage />,
   };
 
   return (

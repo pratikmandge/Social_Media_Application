@@ -4,12 +4,32 @@ import { MdOutlineNotifications } from 'react-icons/md'
 import { TbMessageChatbot } from 'react-icons/tb'
 import { GoHome } from 'react-icons/go'
 import SearchBar from './SearchBar';
+import { redirect } from "react-router-dom";
 
 const NavBar = ({ showNav, setShowNav }) => {
 
+
     //  useState("false") -> GetVariable, SetFunction("false")
 
-    //const [showNav, setShowNav] = useState(false);
+    // const [showNav, setShowNav] = useState(false);
+    const [showProfile, setShowProfile] = useState(false);
+
+    // const [email, setEmail] = useState("test@gmail.com");
+    var email = "test@gmail.com"
+
+
+    if(localStorage.getItem("user") !== null){
+        let user = localStorage.getItem("user")
+        email = user.split(" ")[0];
+        // setEmail(user.split(" ")[0]);
+    }
+
+    const logout = () =>{
+        localStorage.removeItem("user")
+        window.location = "/login";
+        // navigate("/login")
+        // redirect("/login")
+    }
 
     //  showNav == True ? "kjdandsajdd" :  "nakjd"
 
@@ -60,19 +80,41 @@ const NavBar = ({ showNav, setShowNav }) => {
                         </li>
 
                         <li>
-                            <a href="#" class="block flex space-x-2 items-center py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+                            <a href="#" onClick={() => setShowProfile(!showProfile)}  class="block flex space-x-2 items-center py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
                                 <img class="object-cover w-8 h-8 rounded-full" src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="" />
 
                                 <span className='text-white lg:hidden md:hidden inline-block text-lg'>Bhavana</span>
                             </a>
 
                         </li>
+
+
+                        <div id="dropdownAvatar" class={showProfile ? "z-10 absolute right-8 top-14  bg-white divide-y divide-gray-100 rounded-lg shadow w-44" :"z-10  bg-white divide-y divide-gray-100 rounded-lg shadow w-44 hidden" }>
+                            <div class="px-4 py-3 text-sm text-gray-900">
+                                <div className='mb-2'>Bonnie Green</div>
+                                
+                                <hr/>
+                                <div class="font-medium truncate pt-2">{email}</div>
+                            </div>
+                            <ul class="py-2 text-sm text-gray-700 " aria-labelledby="dropdownUserAvatarButton">
+                                
+                                <li>
+                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100">Profile</a>
+                                </li>
+                            </ul>
+                            <div class="py-2">
+                                <a onClick={logout} href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sign out</a>
+                            </div>
+                        </div>
+
                     </ul>
                 </div>
             </div>
         </nav>
 
+
     )
 }
 
 export default NavBar
+

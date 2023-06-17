@@ -4,7 +4,7 @@ import MainPage from './Settings/SideBar/MainPage';
 import Login from './components/Auth/Login';
 //import ChatBody from './Components/Message/chatBody/chatBody/ChatBody';
 import NavBar from './components/NavBar/NavBar';
-// import ProfilePage from './Components/Profile/ProfilePage';
+
 
 import "./App.css";
 // import "./Scroll.css";
@@ -12,37 +12,43 @@ import "./App.css";
 import {
   createBrowserRouter,
   RouterProvider,
+  createRoutesFromElements
   
 } from "react-router-dom";
+import Register from './components/Auth/Register';
 
 
 
 
-const router = createBrowserRouter([
-  {
-    path: "/settings",
-    element: <MainPage />,
-  },
-  {
-    path: "/",
-    element: <MainFeeds/>,
-    
-  },
-  {
-    path: "/login",
-    element: <Login />,
-  },
-  // {
-  //   path:"/message",
-  //   element:<ChatBody/>
-  // }
+const router = createBrowserRouter(
   
-  // {
-  //   path: "/Profile",
-  //   element: <ProfilePage />,
 
-  // },
-]);
+
+  [
+    {
+          path: "/settings",
+          element: <MainPage />,
+        },
+        {
+          path: "/",
+          element: <MainFeeds/>,
+          
+        },
+        {
+          path: "/login",
+          element: <Login />,
+        },
+        {
+          path: "/register",
+          element: <Register />,
+        },
+      ]
+
+
+
+//  
+
+);
 
 const App = () => {
   const [showNav, setShowNav] = useState(false);
@@ -50,9 +56,8 @@ const App = () => {
   return (
     <div id='root'>
       
-        <NavBar showNav={showNav} setShowNav={setShowNav}/>
-
-      <div onClick = {() => setShowNav(!showNav)}>
+      <NavBar showNav={showNav} setShowNav={setShowNav}/>
+      <div onClick = {() => setShowNav(false)}>
         <RouterProvider router={router} />
         </div>
         {/* <MainPage /> */}
