@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Alert from '../Alerts/Alert';
 import { useNavigate } from 'react-router-dom';
 import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai'
@@ -6,6 +6,13 @@ import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai'
 const Register = () => {
 
     const navigate = useNavigate();
+
+    useEffect(function(){
+        const user = localStorage.getItem("user")
+        if(user !== null){
+            navigate("/");
+        }
+    },[])
 
     const [showPassword, setshowPassword] = useState(false);
 
@@ -28,6 +35,8 @@ const Register = () => {
 
     const handleValidation = () => {
         //for password 
+
+        console.log("handle validations")
         const passwordInputValue = password;
         const uppercaseRegExp = /(?=.*?[A-Z])/;
         const lowercaseRegExp = /(?=.*?[a-z])/;
@@ -39,19 +48,63 @@ const Register = () => {
         const digitsPassword = digitsRegExp.test(passwordInputValue);
         const specialCharPassword = specialCharRegExp.test(passwordInputValue);
         const minLengthPassword = minLengthRegExp.test(passwordInputValue);
+
+        console.log(password)
         let errMsg = "";
         if (password === "") {
             errMsg = "Password is empty";
+            setAlertStatus({
+                errorMessage: errMsg,
+                errorCode: "Error..!!",
+                errorColor: "red"
+            });
+
+            setAlert(true);
         } else if (!uppercasePassword) {
             errMsg = "At least one Uppercase";
+            setAlertStatus({
+                errorMessage: errMsg,
+                errorCode: "Error..!!",
+                errorColor: "red"
+            });
+
+            setAlert(true);
         } else if (!lowercasePassword) {
             errMsg = "At least one Lowercase";
+            setAlertStatus({
+                errorMessage: errMsg,
+                errorCode: "Error..!!",
+                errorColor: "red"
+            });
+
+            setAlert(true);
         } else if (!digitsPassword) {
             errMsg = "At least one digit";
+            setAlertStatus({
+                errorMessage: errMsg,
+                errorCode: "Error..!!",
+                errorColor: "red"
+            });
+
+            setAlert(true);
         } else if (!specialCharPassword) {
             errMsg = "At least one Special Characters";
+            setAlertStatus({
+                errorMessage: errMsg,
+                errorCode: "Error..!!",
+                errorColor: "red"
+            });
+
+            setAlert(true);
         } else if (!minLengthPassword) {
             errMsg = "At least minumum 8 characters";
+            setAlertStatus({
+                errorMessage: errMsg,
+                errorCode: "Error..!!",
+                errorColor: "red"
+            });
+
+            setAlert(true);
         } else if (password !== confirmPasssword) {
             setAlertStatus({
                 errorMessage: "Confirm password is not matched",
@@ -178,23 +231,15 @@ const Register = () => {
                             >Create Account</button>
                         </form>
 
-                        <div class="text-center text-sm text-grey-dark mt-4">
-                            By signing up, you agree to the
-                            <a class="no-underline border-b border-grey-dark text-grey-dark" href="#">
-                                Terms of Service
-                            </a> and
-                            <a class="no-underline border-b border-grey-dark text-grey-dark" href="#">
-                                Privacy Policy
-                            </a>
-                        </div>
+                        <div class="flex item-center justify-center text-grey-dark mt-6 gap-2 font-semibold">
+                        Already have an account?
+                        <a class="underline border-b border-blue text-blue-700 hover:text-blue-500" href="../login/">
+                            Log in
+                        </a>
+                    </div> 
                     </div>
 
-                    <div class="text-grey-dark mt-6">
-                        Already have an account?
-                        <a class="no-underline border-b border-blue text-blue" href="../login/">
-                            Log in
-                        </a>.
-                    </div>
+             
                 </div>
             </div>
         </div>
