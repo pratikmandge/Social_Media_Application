@@ -1,12 +1,21 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai'
 import Alert from '../Alerts/Alert';
 
 
+
 const Login = () => {
+    
 
   const navigate = useNavigate();
+
+  useEffect(function(){
+    const user = localStorage.getItem("user")
+    if(user !== null){
+        navigate("/");
+    }
+},[])
 
   // Retrieving data from input tag.
   const [formData, setFormData] = useState({
@@ -23,7 +32,7 @@ const Login = () => {
 
   const onChange=(e)=>{
     setFormData({ ...formData, [e.target.name]: e.target.value });
-  }
+  } 
 
   
 
@@ -83,17 +92,16 @@ const Login = () => {
                                 type="submit"
                                 class="w-full text-center py-3 rounded bg-blue-500 text-white hover:bg-green-dark focus:outline-none my-1"
                             >Sign In</button>
-                        </form>  
+
+                            
+                        </form> 
+
+                        
                         
 
                     </div>
 
-                    <div class="text-grey-dark mt-6">
-                        Already have an account?
-                        <a class="no-underline border-b border-blue text-blue" href="../login/">
-                            Log in
-                        </a>.
-                    </div>
+                    
                 </div>
             </div>
         </div>
