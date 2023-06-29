@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import MainFeeds from './components/Feeds/MainFeeds';
 import MainPage from './Settings/SideBar/MainPage';
 import Login from './components/Auth/Login';
-//import ChatBody from './Components/Message/chatBody/chatBody/ChatBody';
 import NavBar from './components/NavBar/NavBar';
 
 
@@ -16,7 +15,7 @@ import {
   
 } from "react-router-dom";
 import Register from './components/Auth/Register';
-import Messages from './components/Messages/Messages';
+// import Messages from './components/Messages/Messages';
 
 
 
@@ -43,10 +42,10 @@ const router = createBrowserRouter(
           path: "/register",
           element: <Register />,
         },
-        {
-          path: "/messages",
-          element: <Messages />,
-        },  
+        // {
+        //   path: "/messages",
+        //   element: <Messages />,
+        // },  
       ]
 
 

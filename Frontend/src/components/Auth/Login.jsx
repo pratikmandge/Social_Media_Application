@@ -57,10 +57,10 @@ const Login = () => {
   
   return (
     <div>
-            <div class="bg-gray-200 pt-4 min-h-screen flex flex-col">
-                <div class="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
-                    <div class="bg-white px-6 py-8 rounded shadow-md text-black w-full">
-                        <h1 class="mb-8 text-3xl text-center">Sign In</h1>
+            <div className="bg-gray-200 pt-4 min-h-screen flex flex-col">
+                <div className="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
+                    <div className="bg-white px-6 py-8 rounded shadow-md text-black w-full">
+                        <h1 className="mb-8 text-3xl text-center">Sign In</h1>
 
                         {
                             alert === true ?
@@ -73,14 +73,14 @@ const Login = () => {
 
                             <input
                                 type="text"
-                                class="block border border-grey-light w-full p-3 rounded mb-4"
+                                className="block border border-grey-light w-full p-3 rounded mb-4"
                                 name="email"
                                 placeholder="email" onChange={(e) => onChange(e)} required />
 
                             <div className="relative">
                                 <input
                                     type={showPassword ? "text" : "password"}
-                                    class="block border border-grey-light w-full p-3 rounded mb-4"
+                                    className="block border border-grey-light w-full p-3 rounded mb-4"
                                     name="password"
                                     placeholder="Password" onChange={(e) => onChange(e)} required />
                                 <div className="absolute right-5 top-4" >
@@ -90,7 +90,7 @@ const Login = () => {
 
                             <button
                                 type="submit"
-                                class="w-full text-center py-3 rounded bg-blue-500 text-white hover:bg-green-dark focus:outline-none my-1"
+                                className="w-full text-center py-3 rounded bg-blue-500 text-white hover:bg-green-dark focus:outline-none my-1"
                             >Sign In</button>
 
                             

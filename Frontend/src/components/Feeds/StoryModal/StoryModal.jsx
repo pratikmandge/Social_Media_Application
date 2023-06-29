@@ -59,8 +59,8 @@ const StoryModal = ({ showModal, setShowModal }) => {
                       <img src={preview} alt="" className="object-cover w-full h-[300px]" />
                     </div>}
 
-                    <label class="block mb-2 text-sm font-medium text-gray-900 " for="file_input">Upload file</label>
-                    <input onChange={onSelectFile} class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50  focus:outline-none  placeholder-gray-600" id="file_input" type="file" />
+                    <label className="block mb-2 text-sm font-medium text-gray-900 " for="file_input">Upload file</label>
+                    <input onChange={onSelectFile} className="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50  focus:outline-none  placeholder-gray-600" id="file_input" type="file" />
 
                   </form>
                 </div>
